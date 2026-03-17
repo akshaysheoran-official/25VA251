@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Functions Demo</title>
+</head>
+
+<body>
+
+<script>
+
+// ---------------- FUNCTION WITH PARAMETER ----------------
+function demo1(text){
+    // 'text' is a parameter received by the function
+    console.log("Hello " + text);
+}
+
+// calling the function
+demo1("React");
+
+
+
+// ---------------- FUNCTION WITH DEFAULT PARAMETER ----------------
+function add(a, b = 22){
+    // If second value is not provided, b will automatically become 22
+
+    var num1 = a;
+    var num2 = b;
+
+    var res = num1 + num2;
+
+    console.log("Addition of two numbers is " + res);
+}
+
+// calling function with one argument
+add(34);
+
+
+
+// ---------------- NORMAL FUNCTION WITH MULTIPLE OPERATIONS ----------------
+function cal(){
+
+    // Addition function
+    function add(a,b){
+        console.log("Addition is " + (a+b));
+    }
+
+    // Subtraction function
+    function sub(x,y){
+        console.log("Subtraction is " + (x-y));
+    }
+
+    // Multiplication function
+    function mul(p,q){
+        console.log("Multiplication is " + (p*q));
+    }
+
+    // calling all functions
+    mul(9,6);
+    sub(5,7);
+    add(2,4);
+}
+
+// calling cal()
+cal();
+
+
+
+// ---------------- ANONYMOUS FUNCTION ----------------
+// Function without a name stored inside a variable
+
+let msg = function(){
+    console.log("Hello ABES");
+};
+
+// calling anonymous function
+msg();
+
+
+
+// ---------------- ARROW FUNCTION (SHORT SYNTAX) ----------------
+// Arrow functions are shorter versions of normal functions
+
+let msg1 = () => console.log("Hello from Arrow Function");
+
+msg1();
+
+
+
+// ---------------- ARROW FUNCTION WITH MULTIPLE LINES ----------------
+let msg2 = (age) => {
+
+    // condition check
+    if(age >= 18){
+        console.log("Valid age");
+    } else {
+        console.log("Not valid age");
+    }
+
+};
+
+// calling arrow function
+msg2(23);
+
+
+
+// ---------------- CALLBACK FUNCTION ----------------
+// A callback function is a function passed as an argument to another function
+
+function cal2(a, b, callback){
+
+    var num1 = a;
+    console.log("First number is " + num1);
+
+    var num2 = b;
+    console.log("Second number is " + num2);
+
+    // calculating result
+    var res = num1 + num2;
+
+    // calling callback function and passing result
+    callback(res);
+}
+
+
+
+// Callback function definition
+function display(result){
+    console.log("Result is " + result);
+}
+
+
+
+// calling cal2() and passing display as callback
+cal2(10, 20, display);
+
+
+
+</script>
+
+</body>
+</html>
